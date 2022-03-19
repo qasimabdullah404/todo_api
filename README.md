@@ -1,3 +1,24 @@
-# Rails TODO app - API
+# Rails TODO App - API
 
 *[Root URL](https://rl-todo-api.herokuapp.com/)* | *[URL to make requests](https://rl-todo-api.herokuapp.com/api/v1/todos)*
+
+> Todo Model
+
+``task - String || task_completed - boolean -> task_completed defaults to false``
+
+API requests to ``/api/v1/todos`` [**GET ``/api/v1/todos`` for all todos**]
+
+C - [POST] ``/api/v1/todos`` with json body containing task
+R - [GET] ``/api/v1/todos/:id``
+U - [PUT/PATCH] ``/api/v1/todos/:id`` with json body containing task|task_completed
+D - [DELETE] ``/api/v1/todos/:id`` with json body containing task
+
+## Development
+Ruby: `3.1.1` Rails: `7` and `Redis`
+
+1- Fork the repository
+2- RUN `bundle install`
+3- RUN `rails db:create db:migrate`
+4- RUN `rails s`
+5- RUN `redis-server`
+6- Thanks for your contribution!
