@@ -10,6 +10,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "bootsnap", require: false
 
+gem 'jsonapi-serializer'
 gem 'redis'
 
 group :development, :test do
