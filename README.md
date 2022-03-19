@@ -24,3 +24,6 @@ Ruby: `3.1.1` Rails: `7` and `Redis`
 4. RUN `rails s`
 5. RUN `redis-server`
 6. Thanks for your contribution!
+
+## API Requests limitations
+Uses Redis with defaults set to 60 requests per 15 minutes. This can be changed *[here](https://github.com/qasimabdullah404/todo_api/blob/main/config/initializers/throttle.rb#L6-L7)*
