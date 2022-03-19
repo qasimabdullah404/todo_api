@@ -18,9 +18,9 @@ D - [DELETE] ``/api/v1/todos/:id`` with json body containing task
 ## Development
 Ruby: `3.1.1` Rails: `7` and `Redis`
 
-1- Fork the repository
-2- RUN `bundle install`
-3- RUN `rails db:create db:migrate`
-4- RUN `rails s`
-5- RUN `redis-server`
-6- Thanks for your contribution!
+1. Fork the repository
+2. RUN `bundle install`
+3. RUN `rails db:create db:migrate`
+4. RUN `rails s`
+5. RUN `redis-server`
+6. Thanks for your contribution!
