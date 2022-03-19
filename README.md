@@ -8,10 +8,12 @@
 
 API requests to ``/api/v1/todos`` [**GET ``/api/v1/todos`` for all todos**]
 
+```
 C - [POST] ``/api/v1/todos`` with json body containing task
 R - [GET] ``/api/v1/todos/:id``
 U - [PUT/PATCH] ``/api/v1/todos/:id`` with json body containing task|task_completed
 D - [DELETE] ``/api/v1/todos/:id`` with json body containing task
+```
 
 ## Development
 Ruby: `3.1.1` Rails: `7` and `Redis`
