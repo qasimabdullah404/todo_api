@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::API
-  before_action :throttle
-
   def throttle
     client_ip = request.env["REMOTE_ADDR"]
     key = "count:#{client_ip}"
