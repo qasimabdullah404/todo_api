@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::API
+  include JsonWebToken
+  before_action :authenticate_request
+
   def throttle
     client_ip = request.env["REMOTE_ADDR"]
     key = "count:#{client_ip}"
@@ -14,4 +17,13 @@ class ApplicationController < ActionController::API
     REDIS.incr(key)
     true
   end
+
+  private
+    def authenticate_request
+      header = request.headers["Authorization"]
+      header = header.split(' ').last if header
+
+      decoded = jwt_decode(header)
+      @current_user = User.find(decoded[:user_id])
+    end
 end

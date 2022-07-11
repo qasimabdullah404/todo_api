@@ -1,13 +1,15 @@
 class Api::V1::TodosController < ApplicationController
   before_action :throttle
-  
+  before_action :authenticate_request
+
   def index
-    todos = Todo.all
+    todos = Todo.all.where(user_id: @current_user.id)
     render json: TodoSerializer.new(todos), status: :ok
   end
 
   def create
     todo = Todo.new(todo_params)
+    todo.user_id = @current_user.id
     if todo.save
       render json: TodoSerializer.new(todo), status: :created
     else
@@ -47,6 +49,6 @@ class Api::V1::TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:task, :task_completed)
+    params.permit(:task, :task_completed)
   end
 end
